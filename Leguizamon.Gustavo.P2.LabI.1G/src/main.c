@@ -84,6 +84,18 @@ int main(void) {
 				}
 				break;
 			case optMainSetGenre:
+				if (ll_isEmpty(listMovies)){
+					puts("NO hay peliculas cargadas en el sistema");
+				}
+				else{
+					result = controller_setGenre(listMovies);
+					if (result){
+						puts("Se asignaron los generos");
+					}
+					else{
+						puts("Ocurrio un error al asignar generos");
+					}
+				}
 				break;
 			case optMainFilterByGenre:
 				break;

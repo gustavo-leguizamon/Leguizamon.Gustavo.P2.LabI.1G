@@ -192,7 +192,6 @@ int movie_showMovies(LinkedList* pMovies){
 
 void* movie_mapRating(void* object){
 	eMovie* movie = NULL;
-	//float* aux = NULL;
 	int min = 1;
 	int max = 10;
 	float rating;
@@ -202,13 +201,36 @@ void* movie_mapRating(void* object){
 
 		rating = (float)(rand() % (max - min + 1) + min) / 10; //2 DECIMALES
 		movie->rating = rating;
+	}
 
-		/*
-		aux = (char*)malloc(sizeof(char));
-		if (aux != NULL){
-			strcpy(aux, movie->name);
+	return movie;
+}
+
+
+void* movie_mapGenre(void* object){
+	eMovie* movie = NULL;
+	int min = 1;
+	int max = 4;
+	int random;
+
+	if (object != NULL){
+		movie = (eMovie*)object;
+
+		random = rand() % (max - min + 1) + min;
+		switch(random){
+		case 1:
+			strcpy(movie->genero, "drama");
+			break;
+		case 2:
+			strcpy(movie->genero, "comedia");
+			break;
+		case 3:
+			strcpy(movie->genero, "accion");
+			break;
+		default:
+			strcpy(movie->genero, "terror");
+			break;
 		}
-		*/
 	}
 
 	return movie;

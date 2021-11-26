@@ -272,3 +272,28 @@ int controller_setRating(LinkedList* pMovies){
 
 	return result;
 }
+
+
+
+int controller_setGenre(LinkedList* pMovies){
+	int result = 0;
+	LinkedList* listOfGenres = NULL;
+	int lenGenres;
+	eMovie* auxMovie = NULL;
+
+
+	if (pMovies != NULL){
+		listOfGenres = ll_map(pMovies, movie_mapGenre);
+		if (listOfGenres != NULL){
+			ll_clear(pMovies);
+			lenGenres = ll_len(listOfGenres);
+			for (int i = 0; i < lenGenres; i++){
+				auxMovie = (eMovie*)ll_get(listOfGenres, i);
+				ll_add(pMovies, auxMovie);
+			}
+			result = 1;
+		}
+	}
+
+	return result;
+}

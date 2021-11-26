@@ -73,4 +73,7 @@ int controller_saveAsText(char* path , LinkedList* pMovies);
 int controller_setRating(LinkedList* pMovies);
 
 
+int controller_setGenre(LinkedList* pMovies);
+
+
 #endif /* INC_CONTROLLER_H_ */

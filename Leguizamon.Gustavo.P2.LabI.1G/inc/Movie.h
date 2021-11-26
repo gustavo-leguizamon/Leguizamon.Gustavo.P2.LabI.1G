@@ -47,3 +47,5 @@ int movie_showMovies(LinkedList* pMovies);
 
 
 void* movie_mapRating(void* object);
+
+void* movie_mapGenre(void* object);
