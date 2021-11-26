@@ -95,7 +95,7 @@ int controller_loadFromBinary(char* path, LinkedList* pMovies)
 }
 */
 
-int controller_listPets(LinkedList* pMovies)
+int controller_listMovies(LinkedList* pMovies)
 {
 	return movie_showMovies(pMovies);
 }
@@ -249,3 +249,26 @@ int controller_saveAsBinary(char* path, LinkedList* pMovies)
 }
 
 
+
+int controller_setRating(LinkedList* pMovies){
+	int result = 0;
+	LinkedList* listOfRatings = NULL;
+	int lenRatings;
+	eMovie* auxMovie = NULL;
+
+
+	if (pMovies != NULL){
+		listOfRatings = ll_map(pMovies, movie_mapRating);
+		if (listOfRatings != NULL){
+			ll_clear(pMovies);
+			lenRatings = ll_len(listOfRatings);
+			for (int i = 0; i < lenRatings; i++){
+				auxMovie = (eMovie*)ll_get(listOfRatings, i);
+				ll_add(pMovies, auxMovie);
+			}
+			result = 1;
+		}
+	}
+
+	return result;
+}

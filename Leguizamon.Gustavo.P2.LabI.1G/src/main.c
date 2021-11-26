@@ -63,13 +63,25 @@ int main(void) {
 					puts("NO hay peliculas cargadas en el sistema");
 				}
 				else{
-					result = controller_listPets(listMovies);
+					result = controller_listMovies(listMovies);
 					if (!result){
 						puts("Ocurrio un error al mostrar peliculas");
 					}
 				}
 				break;
 			case optMainSetRating:
+				if (ll_isEmpty(listMovies)){
+					puts("NO hay peliculas cargadas en el sistema");
+				}
+				else{
+					result = controller_setRating(listMovies);
+					if (result){
+						puts("Se asignaron los ratings");
+					}
+					else{
+						puts("Ocurrio un error al asignar ratings");
+					}
+				}
 				break;
 			case optMainSetGenre:
 				break;

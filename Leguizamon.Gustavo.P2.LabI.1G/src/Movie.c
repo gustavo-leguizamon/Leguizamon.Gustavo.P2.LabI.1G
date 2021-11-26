@@ -187,3 +187,29 @@ int movie_showMovies(LinkedList* pMovies){
 
     return result;
 }
+
+
+
+void* movie_mapRating(void* object){
+	eMovie* movie = NULL;
+	//float* aux = NULL;
+	int min = 1;
+	int max = 10;
+	float rating;
+
+	if (object != NULL){
+		movie = (eMovie*)object;
+
+		rating = (float)(rand() % (max - min + 1) + min) / 10; //2 DECIMALES
+		movie->rating = rating;
+
+		/*
+		aux = (char*)malloc(sizeof(char));
+		if (aux != NULL){
+			strcpy(aux, movie->name);
+		}
+		*/
+	}
+
+	return movie;
+}

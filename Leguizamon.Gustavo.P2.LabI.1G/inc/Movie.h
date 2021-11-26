@@ -44,3 +44,6 @@ void movie_printHeaderReport();
 int movie_showMovie(eMovie* pMovie);
 
 int movie_showMovies(LinkedList* pMovies);
+
+
+void* movie_mapRating(void* object);
