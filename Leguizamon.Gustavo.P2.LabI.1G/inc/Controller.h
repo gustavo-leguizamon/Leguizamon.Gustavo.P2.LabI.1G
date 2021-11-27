@@ -76,4 +76,6 @@ int controller_setRating(LinkedList* pMovies);
 int controller_setGenre(LinkedList* pMovies);
 
 
+int controller_filterByGenre(LinkedList* pMovies);
+
 #endif /* INC_CONTROLLER_H_ */

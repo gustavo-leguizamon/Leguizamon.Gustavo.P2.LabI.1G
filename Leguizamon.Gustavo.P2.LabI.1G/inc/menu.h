@@ -13,18 +13,11 @@ enum enumMainMenu {
 };
 
 
-enum enumEditMenu {
-	optEditName = 1,
-	optEditHoursWorked,
-	optEditSalary,
-	optEditExitMenu
-};
-
-
-enum enumOrderMenu {
-	optOrderId = 1,
-	optOrderName,
-	optOrderExitMenu
+enum enumFilterGenreMenu {
+	optFilterGenreDrama = 1,
+	optFilterGenreComedy,
+	optFilterGenreAction,
+	optFilterGenreTerror
 };
 
 
@@ -41,16 +34,8 @@ int menu();
 
 
 /**
- * @brief Displays a menu of options for edit
- *
- * @return Selected option
- */
-int submenuEdit();
-
-
-/**
  * @brief Displays a menu of options for order pets
  *
  * @return Selected option
  */
-int submenuOrder();
+int submenuFilterGenre();

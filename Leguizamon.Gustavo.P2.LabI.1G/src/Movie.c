@@ -235,3 +235,51 @@ void* movie_mapGenre(void* object){
 
 	return movie;
 }
+
+
+int movie_filterGenreDrama(void* object){
+	int success = 0;
+	eMovie* auxMovie = NULL;
+
+	if (object != NULL){
+		auxMovie = (eMovie*)object;
+		success = strcmp(auxMovie->genero, "drama") == 0;
+	}
+
+	return success;
+}
+
+
+int movie_filterGenreComedy(void* object){
+	int success = 0;
+	eMovie* auxMovie = NULL;
+
+	if (object != NULL){
+		auxMovie = (eMovie*)object;
+		success = strcmp(auxMovie->genero, "comedia") == 0;
+	}
+
+	return success;
+}
+int movie_filterGenreAction(void* object){
+	int success = 0;
+	eMovie* auxMovie = NULL;
+
+	if (object != NULL){
+		auxMovie = (eMovie*)object;
+		success = strcmp(auxMovie->genero, "accion") == 0;
+	}
+
+	return success;
+}
+int movie_filterGenreTerror(void* object){
+	int success = 0;
+	eMovie* auxMovie = NULL;
+
+	if (object != NULL){
+		auxMovie = (eMovie*)object;
+		success = strcmp(auxMovie->genero, "terror") == 0;
+	}
+
+	return success;
+}

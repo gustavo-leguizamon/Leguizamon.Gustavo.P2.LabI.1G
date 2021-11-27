@@ -49,3 +49,9 @@ int movie_showMovies(LinkedList* pMovies);
 void* movie_mapRating(void* object);
 
 void* movie_mapGenre(void* object);
+
+
+int movie_filterGenreDrama(void* object);
+int movie_filterGenreComedy(void* object);
+int movie_filterGenreAction(void* object);
+int movie_filterGenreTerror(void* object);

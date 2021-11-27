@@ -25,7 +25,7 @@ int menu(){
 	return selectedOption;
 }
 
-
+/*
 int submenuOrder(){
 	int selectedOption;
 
@@ -40,4 +40,20 @@ int submenuOrder(){
 
 	return selectedOption;
 }
+*/
 
+int submenuFilterGenre(){
+	int selectedOption;
+
+	puts("**** SELECCIONE GENERO ***");
+	printf("%d. Por Drama\n", optFilterGenreDrama);
+	printf("%d. Por Comedia\n", optFilterGenreComedy);
+	printf("%d. Por Accion\n", optFilterGenreAction);
+	printf("%d. Por Terror\n", optFilterGenreTerror);
+	printf("\n");
+
+	getInt("Ingrese una opcion: ", &selectedOption);
+	puts("");
+
+	return selectedOption;
+}

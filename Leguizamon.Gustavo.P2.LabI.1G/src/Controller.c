@@ -297,3 +297,46 @@ int controller_setGenre(LinkedList* pMovies){
 
 	return result;
 }
+
+
+int controller_filterByGenre(LinkedList* pMovies){
+	int result = 0;
+	LinkedList* listOfGenres = NULL;
+	int lenGenres;
+	eMovie* auxMovie = NULL;
+	int option;
+
+	if (pMovies != NULL){
+		option = submenuFilterGenre();
+		switch(option){
+			case optFilterGenreDrama:
+				listOfGenres = ll_filter(pMovies, movie_filterGenreDrama);
+				break;
+			case optFilterGenreComedy:
+				listOfGenres = ll_filter(pMovies, movie_filterGenreComedy);
+				break;
+			case optFilterGenreAction:
+				listOfGenres = ll_filter(pMovies, movie_filterGenreAction);
+				break;
+			case optFilterGenreTerror:
+				listOfGenres = ll_filter(pMovies, movie_filterGenreTerror);
+				break;
+			default:
+				puts("Opcion invalida");
+				break;
+		}
+		puts("\n");
+
+		if (listOfGenres != NULL){
+			ll_clear(pMovies);
+			lenGenres = ll_len(listOfGenres);
+			for (int i = 0; i < lenGenres; i++){
+				auxMovie = (eMovie*)ll_get(listOfGenres, i);
+				ll_add(pMovies, auxMovie);
+			}
+			result = 1;
+		}
+	}
+
+	return result;
+}

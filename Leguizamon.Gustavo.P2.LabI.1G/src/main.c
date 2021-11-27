@@ -98,6 +98,33 @@ int main(void) {
 				}
 				break;
 			case optMainFilterByGenre:
+				if (ll_isEmpty(listMovies)){
+					puts("NO hay peliculas cargadas en el sistema");
+				}
+				else{
+					result = controller_filterByGenre(listMovies);
+					if (result){
+						controller_loadNameOfFile(path, lenPath);
+						result = controller_saveAsText(path, listMovies);
+						if (result){
+							if (result == 1){
+								printf("Peliculas guardadas con exito en el archivo: %s\n", path);
+							}
+							else if(result == 5){
+								puts("Guardado cancelado por el usuario");
+							}
+							else{
+								puts("Ocurrio un error al intentar guardar el archivo");
+							}
+						}
+						else{
+							puts("Ocurrio un error, datos no validos para guardar el archivo");
+						}
+					}
+					else{
+						puts("Ocurrio un error al filtrar generos");
+					}
+				}
 				break;
 			case optMainSort:
 				if (ll_isEmpty(listMovies)){
