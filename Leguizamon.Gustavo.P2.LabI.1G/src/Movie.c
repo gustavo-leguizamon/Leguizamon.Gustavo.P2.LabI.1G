@@ -189,6 +189,52 @@ int movie_showMovies(LinkedList* pMovies){
 }
 
 
+int movie_compareByGenreRating(void* pMovieA, void* pMovieB){
+	int result = -2;
+	eMovie* auxMovieA = NULL;
+	eMovie* auxMovieB = NULL;
+
+	if (pMovieA != NULL && pMovieB != NULL){
+		auxMovieA = (eMovie*)pMovieA;
+		auxMovieB = (eMovie*)pMovieB;
+
+		result = strcmp(auxMovieA->genero, auxMovieB->genero);
+
+		if ((strcmp(auxMovieA->genero, auxMovieB->genero) == 1)){
+			result = 1;
+		}
+		else if ((strcmp(auxMovieA->genero, auxMovieB->genero) == -1)){
+			result = -1;
+		}
+		else{
+			if (auxMovieA->rating > auxMovieB->rating){
+				result = -1;
+			}
+			else if (auxMovieA->rating < auxMovieB->rating){
+				result = 1;
+			}
+			else{
+				result = 0;
+			}
+		}
+
+
+/*
+		if (auxMovieA->id > auxMovieB->id){
+			result = 1;
+		}
+		else if (auxMovieA->id < auxMovieB->id){
+			result = -1;
+		}
+		else{
+			result = 0;
+		}
+		*/
+	}
+
+	return result;
+}
+
 
 void* movie_mapRating(void* object){
 	eMovie* movie = NULL;

@@ -100,39 +100,22 @@ int controller_listMovies(LinkedList* pMovies)
 	return movie_showMovies(pMovies);
 }
 
-/*
-int controller_sortPets(LinkedList* pPets)
+
+int controller_sortMovies(LinkedList* pMovies)
 {
     int result = 0;
-    int option;
 
-    if (pPets != NULL){
+    if (pMovies != NULL){
     	result = 1;
 
-    	//ll_sort(LinkedList* this, int(*)(void*,void*) pFunc, int order)
-    	option = submenuOrder();
-    	switch(option){
-			case optOrderId:
-		    	puts("Ordenando las mascotas por ID...Por favor espere");
-		    	ll_sort(pPets, pet_compareById, 1);
-				break;
-			case optOrderName:
-		    	puts("Ordenando las mascotas por nombre...Por favor espere");
-		    	ll_sort(pPets, pet_compareByName, 1);
-				break;
-			case optOrderExitMenu:
-				result = 2;
-				break;
-			default:
-				puts("Opcion invalida");
-				break;
-    	}
 		puts("\n");
+    	puts("Ordenando las peliculas por GENERO y RATING...Por favor espere");
+    	ll_sort(pMovies, movie_compareByGenreRating, 1);
     }
 
     return result;
 }
-*/
+
 
 int controller_saveAsText(char* path, LinkedList* pMovies)
 {

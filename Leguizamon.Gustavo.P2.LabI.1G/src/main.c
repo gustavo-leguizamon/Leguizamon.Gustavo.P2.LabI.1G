@@ -131,7 +131,7 @@ int main(void) {
 					puts("NO hay peliculas cargadas en el sistema");
 				}
 				else{
-					//result = controller_sortPets(listMovies);
+					result = controller_sortMovies(listMovies);
 					if (result == 1){
 						puts("Peliculas ordenados");
 					}

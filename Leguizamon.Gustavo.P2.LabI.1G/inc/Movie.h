@@ -45,9 +45,9 @@ int movie_showMovie(eMovie* pMovie);
 
 int movie_showMovies(LinkedList* pMovies);
 
+int movie_compareByGenreRating(void* pMovieA, void* pMovieB);
 
 void* movie_mapRating(void* object);
-
 void* movie_mapGenre(void* object);
 
 
