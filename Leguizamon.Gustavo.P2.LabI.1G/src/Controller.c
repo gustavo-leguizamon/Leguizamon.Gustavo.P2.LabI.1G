@@ -114,7 +114,7 @@ int controller_saveAsText(char* path, LinkedList* pMovies)
 						movie_getTitulo(auxMovie, title) &&
 						movie_getGenero(auxMovie, genre) &&
 						movie_getRating(auxMovie, &rating)){
-						count = fprintf(file, "%d,%s,%s,%f\n", id, title, genre, rating);
+						count = fprintf(file, "%d,%s,%s,%.1f\n", id, title, genre, rating);
 
 						if (count < 4){
 							result = 3;
