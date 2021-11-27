@@ -239,7 +239,7 @@ int movie_compareByGenreRating(void* pMovieA, void* pMovieB){
 void* movie_mapRating(void* object){
 	eMovie* movie = NULL;
 	int min = 1;
-	int max = 10;
+	int max = 100;
 	float rating;
 
 	if (object != NULL){
