@@ -175,12 +175,10 @@ int movie_showMovies(LinkedList* pMovies){
 	eMovie* auxMovie = NULL;
 
 	if (pMovies != NULL){
-		//printHeader(columns, lengths, lenColumns);
 		movie_printHeaderReport();
 		for (int i = 0; i < ll_len(pMovies); i++){
 			auxMovie = (eMovie*)ll_get(pMovies, i);
 			movie_showMovie(auxMovie);
-			//printFooter(lengths, lenColumns);
 		}
 		result = 1;
 	}
@@ -217,19 +215,6 @@ int movie_compareByGenreRating(void* pMovieA, void* pMovieB){
 				result = 0;
 			}
 		}
-
-
-/*
-		if (auxMovieA->id > auxMovieB->id){
-			result = 1;
-		}
-		else if (auxMovieA->id < auxMovieB->id){
-			result = -1;
-		}
-		else{
-			result = 0;
-		}
-		*/
 	}
 
 	return result;
@@ -245,7 +230,7 @@ void* movie_mapRating(void* object){
 	if (object != NULL){
 		movie = (eMovie*)object;
 
-		rating = (float)(rand() % (max - min + 1) + min) / 10; //2 DECIMALES
+		rating = (float)(rand() % (max - min + 1) + min) / 10;
 		movie->rating = rating;
 	}
 

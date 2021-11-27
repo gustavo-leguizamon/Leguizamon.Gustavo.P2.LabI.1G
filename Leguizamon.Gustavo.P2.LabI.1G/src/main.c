@@ -12,21 +12,6 @@ int main(void) {
 	setbuf(stdout, NULL);
 	srand(time(NULL));
 
-	/*
-	int min = 1;
-	int max = 10;
-	int numero;
-	float flotante;
-
-	numero = rand() % (max - min + 1) + min;
-
-	flotante = (float)(rand() % (max - min + 1) + min) / 10; //2 DECIMALES
-*/
-
-
-
-
-
 	int option;
 	int result;
 	int lenPath = 150;

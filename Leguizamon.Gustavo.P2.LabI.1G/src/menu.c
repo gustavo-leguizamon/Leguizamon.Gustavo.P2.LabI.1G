@@ -8,7 +8,6 @@
 int menu(){
 	int selectedOption;
 
-	//puts("**** ABM DE EMPLEADOS ****");
 	printf("%d. Cargar archivo .csv (modo texto)\n", optMainLoadTextFile);
 	printf("%d. Imprimir lista\n", optMainPrintList);
 	printf("%d. Asignar rating\n", optMainSetRating);
@@ -25,22 +24,6 @@ int menu(){
 	return selectedOption;
 }
 
-/*
-int submenuOrder(){
-	int selectedOption;
-
-	puts("**** TIPO DE ORDENAMIENTO ***");
-	printf("%d. Por ID\n", optOrderId);
-	printf("%d. Por Nombre\n", optOrderName);
-	printf("%d. Salir\n", optOrderExitMenu);
-	printf("\n");
-
-	getInt("Ingrese una opcion: ", &selectedOption);
-	puts("");
-
-	return selectedOption;
-}
-*/
 
 int submenuFilterGenre(){
 	int selectedOption;

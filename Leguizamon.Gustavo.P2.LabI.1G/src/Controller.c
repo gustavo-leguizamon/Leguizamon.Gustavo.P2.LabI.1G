@@ -58,43 +58,6 @@ int controller_loadFromText(char* path, LinkedList* pMovies)
     return result;
 }
 
-/*
-int controller_loadFromBinary(char* path, LinkedList* pMovies)
-{
-	int result = 0;
-	char confirmDeleteData = 's';
-
-	if (path != NULL && pMovies != NULL){
-		FILE* file = fopen(path, "rb");
-		if (file != NULL){
-			if (!ll_isEmpty(pMovies)){
-				getChar("Hay datos cargados, si continua se sobreescribiran. Confirma sobreescritura de datos actuales? n(NO) - s(SI): ", &confirmDeleteData);
-				while (confirmDeleteData != 'n' && confirmDeleteData != 's'){
-					getChar("Escriba n o s. Confirma sobreescritura de datos actuales? n(NO) - s(SI): ", &confirmDeleteData);
-				}
-			}
-
-			if (confirmDeleteData == 's'){
-				ll_clear(pMovies);
-				if (parser_MoviesFromBinary(file, pMovies) == 1){
-					result = 1;
-				}
-			}
-			else{
-				result = 2;
-			}
-
-			fclose(file);
-		}
-		else{
-			result = 3;
-		}
-	}
-
-    return result;
-}
-*/
-
 int controller_listMovies(LinkedList* pMovies)
 {
 	return movie_showMovies(pMovies);
